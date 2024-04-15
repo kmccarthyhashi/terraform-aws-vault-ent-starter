@@ -106,7 +106,7 @@ resource "aws_iam_role_policy" "secrets_manager" {
 }
 
 data "aws_iam_policy_document" "secrets_manager" {
-  statement [{
+  statement {
     effect = "Allow"
 
     actions = [
@@ -116,7 +116,7 @@ data "aws_iam_policy_document" "secrets_manager" {
     resources = [
       var.secrets_manager_arn,
     ]
-  }]
+  }
 }
 
 resource "aws_iam_role_policy" "s3_bucket_vault_license" {
